@@ -20,6 +20,7 @@
     <qresource prefix="/Background">
         <file>Resources/Background.png</file>
         <file>Resources/leader.png</file>
+        <file>Resources/intro.png</file>
     </qresource>
     <qresource prefix="/Button">
         <file>Resources/ClearButton.png</file>

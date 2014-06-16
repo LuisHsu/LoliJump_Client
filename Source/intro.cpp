@@ -12,6 +12,7 @@ Intro::Intro(MainWindow *main) :
 	LoadTime=new QTimer(this);
 	LoadTime->start(1);
 	QObject::connect(LoadTime,SIGNAL(timeout()),this,SLOT(Loaded()));
+
 }
 
 Intro::~Intro()
@@ -27,5 +28,16 @@ void Intro::Loaded(){
 	}else{
 		Main->show();
 		delete this;
+	}
+	switch(elapse){
+		case 2000:
+			ui->label_2->setText("Loading Network Module......");
+		break;
+		case 2500:
+			ui->label_2->setText("Setting platforms......");
+		break;
+		case 4500:
+			ui->label_2->setText("Initializing......");
+		break;
 	}
 }

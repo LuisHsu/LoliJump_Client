@@ -36,6 +36,32 @@
     <bool>false</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>275</height>
+    </rect>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="Resourses.qrc">:/Background/Resources/intro.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>250</y>
+     <width>301</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Loading Images......</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="Resourses.qrc"/>

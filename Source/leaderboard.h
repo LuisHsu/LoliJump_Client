@@ -6,7 +6,7 @@
 #include <QTcpSocket>
 #include <QList>
 
-#define HOSTIP "127.0.0.1"
+#define HOSTIP "140.116.115.5"
 #define PORT 5000
 
 namespace Ui {
