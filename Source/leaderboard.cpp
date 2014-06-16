@@ -125,6 +125,7 @@ void Leaderboard::Summit (){
 	msg+=QString::number(plat,10)+"P";
 	msg+=ui->NameEdit->text();
 	SendSocket->write(msg.toStdString().c_str(),strlen(msg.toStdString().c_str()));
+	ui->SummitButton->setEnabled(false);
 }
 
 void Leaderboard::Refresh(){
