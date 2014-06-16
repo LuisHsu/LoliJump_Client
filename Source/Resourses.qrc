@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/Character">
+        <file>Resources/lolita/Girl_jump_0x.png</file>
+        <file>Resources/lolita/Girl_jump_01.png</file>
+        <file>Resources/lolita/Girl_jump_1.png</file>
+        <file>Resources/lolita/Girl_jump_02.png</file>
+        <file>Resources/lolita/Girl_jump_2.png</file>
+        <file>Resources/lolita/Girl_jump_03.png</file>
+        <file>Resources/lolita/Girl_jump_3.png</file>
+        <file>Resources/lolita/Girl_jump_04.png</file>
+        <file>Resources/lolita/Girl_jump_4.png</file>
+        <file>Resources/lolita/Girl_Walk_01.png</file>
+        <file>Resources/lolita/Girl_Walk_02.png</file>
+        <file>Resources/lolita/Girl_Walk_03.png</file>
+        <file>Resources/lolita/Girl_Walk_04.png</file>
+        <file>Resources/lolita/icon.png</file>
+        <file>Resources/lolita/Girl-01.png</file>
+        <file>Resources/lolita/Stand.gif</file>
+    </qresource>
+    <qresource prefix="/Background">
+        <file>Resources/Background.png</file>
+        <file>Resources/leader.png</file>
+    </qresource>
+    <qresource prefix="/Button">
+        <file>Resources/ClearButton.png</file>
+        <file>Resources/PauseButton.png</file>
+        <file>Resources/StartButton.png</file>
+    </qresource>
+    <qresource prefix="/HP">
+        <file>Resources/Black_HP.png</file>
+        <file>Resources/Red_HP.png</file>
+    </qresource>
+    <qresource prefix="/Bar">
+        <file>Resources/TopLaser.png</file>
+    </qresource>
+    <qresource prefix="/Platform">
+        <file>Resources/Laser_Platform.png</file>
+        <file>Resources/Left_Platform.png</file>
+        <file>Resources/Normal_Platform.png</file>
+        <file>Resources/Right_Platform.png</file>
+        <file>Resources/Spring_Platform.png</file>
+        <file>Resources/Temporary_Platform.png</file>
+    </qresource>
+</RCC>
