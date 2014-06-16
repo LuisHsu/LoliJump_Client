@@ -8,9 +8,9 @@
 
 #define MoveSpeed 2
 #define LR_Speed 1
-#define TimerTick 3
-#define Gravity 0.05
-#define JumpHeight 2.5
+#define TimerTick 10
+#define Gravity 0.07
+#define JumpHeight 2
 
 class Character : public QObject
 {

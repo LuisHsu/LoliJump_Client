@@ -20,9 +20,9 @@
 #include "character.h"
 #include "leaderboard.h"
 
-#define INIT_ELAPSED 2
+#define INIT_ELAPSED 10
 #define Maxinum_Speed 1
-#define FloorDistance 500
+#define FloorDistance 4000
 
 class Game : public QObject
 {
