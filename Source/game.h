@@ -21,7 +21,7 @@
 #include "leaderboard.h"
 
 #define INIT_ELAPSED 10
-#define Maxinum_Speed 1
+#define Maxinum_Speed 2
 #define FloorDistance 4000
 
 class Game : public QObject
