@@ -129,6 +129,6 @@ void Leaderboard::Summit (){
 }
 
 void Leaderboard::Refresh(){
-	QString req="request";
+	QString req="1.0.5";
 	SendSocket->write(req.toStdString().c_str(),strlen(req.toStdString().c_str()));
 }
