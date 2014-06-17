@@ -36,7 +36,7 @@ class MainWindow : public QMainWindow
 		void ChangePlatform(int);
 		void ChangeHP(int);
 		void ChangeStartButton(int);
-		void CharacterPixChange(QPixmap *);
+		void CharacterPixChange(QMovie *);
 		void MoveCharacter(int,int);
 
 	private slots:
@@ -47,7 +47,7 @@ class MainWindow : public QMainWindow
 		Ui::MainWindow *ui;
 		Game *game;
 		QLabel *Character;
-		QPixmap *ChtrPix;
+		QMovie *ChtrPix;
 		hp_bar *HpBar;
 
 		//Record

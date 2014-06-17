@@ -49,20 +49,6 @@ RESOURCES += \
     Resourses.qrc
 
 OTHER_FILES += \
-    Resources/lolita/Girl-01.png \
-    Resources/lolita/Girl_jump_01.png \
-    Resources/lolita/Girl_jump_02.png \
-    Resources/lolita/Girl_jump_03.png \
-    Resources/lolita/Girl_jump_04.png \
-    Resources/lolita/Girl_jump_0x.png \
-    Resources/lolita/Girl_jump_1.png \
-    Resources/lolita/Girl_jump_2.png \
-    Resources/lolita/Girl_jump_3.png \
-    Resources/lolita/Girl_jump_4.png \
-    Resources/lolita/Girl_Walk_01.png \
-    Resources/lolita/Girl_Walk_02.png \
-    Resources/lolita/Girl_Walk_03.png \
-    Resources/lolita/Girl_Walk_04.png \
     Resources/Background.png \
     Resources/ClearButton.png \
     Resources/Laser_Platform.png \

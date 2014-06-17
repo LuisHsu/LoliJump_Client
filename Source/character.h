@@ -5,12 +5,13 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QTimer>
+#include <QMovie>
 
 #define MoveSpeed 2
 #define LR_Speed 1
 #define TimerTick 10
 #define Gravity 0.07
-#define JumpHeight 2
+#define JumpHeight 3
 
 class Character : public QObject
 {
@@ -22,7 +23,7 @@ class Character : public QObject
 		void initialize();
 		int getPlatform();
 	signals:
-		void CharacterPix(QPixmap *);
+		void CharacterPix(QMovie *);
 		void CharacterMove(int,int);
 		void Fall();
 		void MoveDown(int,int);
@@ -52,7 +53,12 @@ class Character : public QObject
 		void RightTouched(int);
 		void SpringTouched(int);
 
-		QPixmap *Static_pixmap;
+		QMovie *Static_Movie;
+		QMovie *Jump_Movie;
+		QMovie *L_Jump_Movie;
+		QMovie *R_Jump_Movie;
+		QMovie *L_Walk_Movie;
+		QMovie *R_Walk_Movie;
 		QWidget *Parent;
 		QTimer *ChtrTimer,*TempTimer;
 };

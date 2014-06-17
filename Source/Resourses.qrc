@@ -1,21 +1,12 @@
 <RCC>
     <qresource prefix="/Character">
-        <file>Resources/lolita/Girl_jump_0x.png</file>
-        <file>Resources/lolita/Girl_jump_01.png</file>
-        <file>Resources/lolita/Girl_jump_1.png</file>
-        <file>Resources/lolita/Girl_jump_02.png</file>
-        <file>Resources/lolita/Girl_jump_2.png</file>
-        <file>Resources/lolita/Girl_jump_03.png</file>
-        <file>Resources/lolita/Girl_jump_3.png</file>
-        <file>Resources/lolita/Girl_jump_04.png</file>
-        <file>Resources/lolita/Girl_jump_4.png</file>
-        <file>Resources/lolita/Girl_Walk_01.png</file>
-        <file>Resources/lolita/Girl_Walk_02.png</file>
-        <file>Resources/lolita/Girl_Walk_03.png</file>
-        <file>Resources/lolita/Girl_Walk_04.png</file>
         <file>Resources/lolita/icon.png</file>
-        <file>Resources/lolita/Girl-01.png</file>
-        <file>Resources/lolita/Stand.gif</file>
+        <file alias="Girl_Stand">Resources/lolita/Stand.gif</file>
+        <file alias="Girl_Jump">Resources/lolita/Jump.gif</file>
+        <file alias="Girl_L_Jump">Resources/lolita/Left_jump.gif</file>
+        <file alias="Girl_L_Walk">Resources/lolita/Left_walk.gif</file>
+        <file alias="Girl_R_Jump">Resources/lolita/Right_jump.gif</file>
+        <file alias="Girl_R_Walk">Resources/lolita/Right_walk.gif</file>
     </qresource>
     <qresource prefix="/Background">
         <file>Resources/Background.png</file>

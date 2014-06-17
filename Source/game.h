@@ -20,9 +20,13 @@
 #include "character.h"
 #include "leaderboard.h"
 
-#define INIT_ELAPSED 10
-#define Maxinum_Speed 2
-#define FloorDistance 4000
+#define INIT_ELAPSED 8
+#define Maxinum_Speed 3
+#define FloorDistance 800
+#define MaxinumFloorDist 213
+#define GenerateAccele 14
+#define Init_Gap 71
+#define AcceleGap 15
 
 class Game : public QObject
 {
@@ -53,7 +57,7 @@ class Game : public QObject
 		QWidget *Parent;
 		QTimer *SecTimer,*MilliTimer,*PaintTimer;
 		int RecentTime,RecentElapsed,CountElapsed,CountAccelerate;
-		int CountGenerate;
+		int CountGenerate,GenerateGap;
 		int FloorCount,Floor;
 		bool Started,Paused;
 		QList<platform *> Platform_List;

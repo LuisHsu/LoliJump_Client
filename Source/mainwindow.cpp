@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	QObject::connect(game,SIGNAL(RecordChange(int)),this,SLOT(ChangeRecord(int)));
 	QObject::connect(game,SIGNAL(TimeChange(int)),this,SLOT(ChangeTime(int)));
 	QObject::connect(HpBar,SIGNAL(Hp_Empty()),game,SLOT(Die()));
-	QObject::connect(game->Lolita,SIGNAL(CharacterPix(QPixmap*)),this,SLOT(CharacterPixChange(QPixmap*)));
+	QObject::connect(game->Lolita,SIGNAL(CharacterPix(QMovie*)),this,SLOT(CharacterPixChange(QMovie*)));
 	QObject::connect(game->Lolita,SIGNAL(CharacterMove(int,int)),this,SLOT(MoveCharacter(int,int)));
 	QObject::connect(game->Lolita,SIGNAL(HpChange(int)),this,SLOT(ChangeHP(int)));
 	QObject::connect(game->Lolita,SIGNAL(PlatformChange(int)),this,SLOT(ChangePlatform(int)));
@@ -105,15 +105,13 @@ void MainWindow::paintEvent(QPaintEvent *){
 	game->Paint(p);
 }
 
-void MainWindow::CharacterPixChange (QPixmap *pix){
+void MainWindow::CharacterPixChange (QMovie *pix){
 	ChtrPix=pix;
+	ui->Character_Label->setMovie(ChtrPix);
+	ChtrPix->start();
 }
 void MainWindow::MoveCharacter (int X, int Y){
-	if((Y<=35)||((X==240)&&(Y==130))){
-		ui->Character_Label->setPixmap(*ChtrPix);
-	}
 	if((610-Y)<50){
-		ui->Character_Label->setPixmap(ChtrPix->copy(0,0,30,610-Y));
 		ui->Character_Label->setGeometry(X,Y,30,610-Y);
 	}else{
 		ui->Character_Label->setGeometry(X,Y,30,50);

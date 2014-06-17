@@ -7,11 +7,20 @@ Character::Character(QWidget *parent) :
 	TempTimer=new QTimer(this);
 	QObject::connect(ChtrTimer,SIGNAL(timeout()),this,SLOT(MoveCharacter()));
 	QObject::connect (TempTimer,SIGNAL(timeout()),this,SLOT(TempOut()));
-	Static_pixmap=new QPixmap(":/Character/Resources/lolita/Girl-01.png");
-	*Static_pixmap=Static_pixmap->scaled(30,50);
+	Static_Movie=new QMovie(":/Character/Girl_Stand");
+	Jump_Movie=new QMovie(":/Character/Girl_Jump");
+	L_Jump_Movie=new QMovie(":/Character/Girl_L_Jump");
+	R_Jump_Movie=new QMovie(":/Character/Girl_R_Jump");
+	L_Walk_Movie=new QMovie(":/Character/Girl_L_Walk");
+	R_Walk_Movie=new QMovie(":/Character/Girl_R_Walk");
 }
 Character::~Character (){
-	delete Static_pixmap;
+	delete Static_Movie;
+	delete Jump_Movie;
+	delete L_Jump_Movie;
+	delete R_Jump_Movie;
+	delete L_Walk_Movie;
+	delete R_Walk_Movie;
 	delete ChtrTimer;
 }
 
@@ -29,7 +38,7 @@ void Character::initialize(){
 	TempTimeStarted=false;
 	t_y=0;
 	s_y=0;
-	emit CharacterPix(Static_pixmap);
+	emit CharacterPix(Static_Movie);
 	emit CharacterMove(x,y);
 	emit PlatformChange(0);
 }
@@ -63,11 +72,27 @@ void Character::MoveCharacter(){
 		if(x<37){
 			x=37;
 		}
+		if(Vertical>-1&&Vertical<1){
+			emit CharacterPix(L_Walk_Movie);
+		}else{
+			emit CharacterPix(L_Jump_Movie);
+		}
 	}else{
 		if((L_press==false)&&(R_press==true)){//Right
 			x+=MoveSpeed;
 			if(x>500){
 				x=500;
+			}
+			if(Vertical>-1&&Vertical<1){
+				emit CharacterPix(R_Walk_Movie);
+			}else{
+				emit CharacterPix(R_Jump_Movie);
+			}
+		}else{//Middle
+			if(Vertical>-1&&Vertical<1){
+				emit CharacterPix(Static_Movie);
+			}else{
+				emit CharacterPix(Jump_Movie);
 			}
 		}
 	}

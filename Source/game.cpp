@@ -81,14 +81,19 @@ void Game::Die(){
 }
 
 void Game::SecTimeOut(){
-	if(RecentElapsed>=0){
-		if(CountAccelerate<15){
-			CountAccelerate+=1;
-		}else{
-			CountAccelerate=0;
+
+	if(CountAccelerate<AcceleGap){
+		CountAccelerate+=1;
+	}else{
+		CountAccelerate=0;
+		if(RecentElapsed>=0){
 			RecentElapsed-=1;
 		}
+		if(GenerateGap<MaxinumFloorDist){
+			GenerateGap+=GenerateAccele;
+		}
 	}
+
 	RecentTime+=1;
 	emit TimeChange(RecentTime);
 }
@@ -200,6 +205,7 @@ void Game::InitializeGame(){
 	CountGenerate=0;
 	FloorCount=0;
 	Floor=0;
+	GenerateGap=Init_Gap;
 
 	GeneratePlatform(PLATFORM_NORMAL,200,610-426);
 	GeneratePlatform(PLATFORM_RAND,LOCATION_RAND,610-355);
@@ -215,7 +221,7 @@ void Game::MilliTimeOut(){
 		CountElapsed+=1;
 	}else{
 		CountElapsed=0;
-		if(CountGenerate<71){
+		if(CountGenerate<GenerateGap){
 			CountGenerate+=1;
 		}else{
 			CountGenerate=0;
