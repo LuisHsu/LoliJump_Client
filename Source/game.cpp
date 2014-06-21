@@ -1,9 +1,11 @@
 #include "game.h"
 
-Game::Game(QWidget *parent,hp_bar *Bar){
+Game::Game(QWidget *parent, hp_bar *Bar, QString pat ,QMediaPlayer *bgm){
+
 	qsrand(QDateTime::currentMSecsSinceEpoch());
 	Parent=parent;
 
+	path=pat;
 	Lolita=new Character(Parent);
 
 	SecTimer=new QTimer(this);
@@ -12,6 +14,7 @@ Game::Game(QWidget *parent,hp_bar *Bar){
 	PaintTimer->start(1);
 
 	bar=Bar;
+	BGM=bgm;
 
 	Started=false;
 
@@ -56,6 +59,10 @@ void Game::StartButtonClicked(){
 }
 
 void Game::Die(){
+	BGM->stop();
+	QMediaPlayer FX(this);
+	FX.setMedia(QUrl::fromLocalFile(path+"/Annie.mp3"));
+	FX.play();
 	SecTimer->stop();
 	MilliTimer->stop();
 	Lolita->StopCharacter();
@@ -206,6 +213,8 @@ void Game::InitializeGame(){
 	FloorCount=0;
 	Floor=0;
 	GenerateGap=Init_Gap;
+
+	BGM->play();
 
 	GeneratePlatform(PLATFORM_NORMAL,200,610-426);
 	GeneratePlatform(PLATFORM_RAND,LOCATION_RAND,610-355);

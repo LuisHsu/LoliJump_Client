@@ -8,7 +8,15 @@ MainWindow::MainWindow(QWidget *parent) :
 	//Allocate object
 	ui->setupUi(this);
 	HpBar=new hp_bar(ui->HPLabel_Red,MAXHP);
-	game=new Game(this,HpBar);
+	QString path=QApplication::applicationDirPath();
+	BGM=new QMediaPlayer(this);
+	BGMList=new QMediaPlaylist(this);
+	BGMList->addMedia(QUrl::fromLocalFile(path+"/BGM.mp3"));
+	BGMList->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
+	BGM->setPlaylist(BGMList);
+	BGM->setVolume(50);
+	game=new Game(this,HpBar,QApplication::applicationDirPath(),BGM);
+
 
 	//Connect
 	QObject::connect(ui->StartButton,SIGNAL(clicked()),game,SLOT(StartButtonClicked()));
@@ -74,6 +82,10 @@ void MainWindow::ChangeRecord(int value){
 }
 
 void MainWindow::ChangeHP(int value){
+	QMediaPlayer FX(this);
+	QString path=QApplication::applicationDirPath();
+	FX.setMedia(QUrl::fromLocalFile(path+"/jump.mp3"));
+	FX.play();
 	if(value<0){
 		*HpBar-=value*(-1);
 	}else{

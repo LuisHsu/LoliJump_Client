@@ -9,6 +9,8 @@
 #include <QPainter>
 #include <QDateTime>
 #include <QMainWindow>
+#include <QtMultimedia/qmediaplayer.h>
+#include <QtMultimedia/qmediaplaylist.h>
 
 #include "hp_bar.h"
 #include "normal_platform.h"
@@ -20,19 +22,19 @@
 #include "character.h"
 #include "leaderboard.h"
 
-#define INIT_ELAPSED 8
-#define Maxinum_Speed 3
+#define INIT_ELAPSED 7
+#define Maxinum_Speed 5
 #define FloorDistance 800
-#define MaxinumFloorDist 213
+#define MaxinumFloorDist 177
 #define GenerateAccele 14
 #define Init_Gap 71
-#define AcceleGap 15
+#define AcceleGap 10
 
 class Game : public QObject
 {
 		Q_OBJECT
 	public:
-		explicit Game(QWidget *parent, hp_bar *Bar);
+		explicit Game(QWidget *parent, hp_bar *Bar, QString pat, QMediaPlayer *bgm);
 		~Game();
 		Character *Lolita;
 		void Paint(QPainter &p);
@@ -62,6 +64,8 @@ class Game : public QObject
 		bool Started,Paused;
 		QList<platform *> Platform_List;
 		hp_bar *bar;
+		QString path;
+		QMediaPlayer *BGM;
 
 		Leaderboard *Leader_window;
 

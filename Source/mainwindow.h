@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtMultimedia/qmediaplayer.h>
+#include <QtMultimedia/qmediaplaylist.h>
 #include <QPaintEvent>
 #include <QKeyEvent>
 #include <QMovie>
@@ -9,7 +11,7 @@
 #include "hp_bar.h"
 #include "game.h"
 
-#define MAXHP 15
+#define MAXHP 25
 
 namespace Ui {
 	class MainWindow;
@@ -48,6 +50,8 @@ class MainWindow : public QMainWindow
 		Game *game;
 		QLabel *Character;
 		QMovie *ChtrPix;
+		QMediaPlayer *BGM;
+		QMediaPlaylist *BGMList;
 		hp_bar *HpBar;
 
 		//Record

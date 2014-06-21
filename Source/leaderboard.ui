@@ -396,7 +396,7 @@ color: rgb(255, 255, 255);</string>
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="FloorTab">
     <attribute name="title">
