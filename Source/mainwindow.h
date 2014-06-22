@@ -50,8 +50,6 @@ class MainWindow : public QMainWindow
 		Game *game;
 		QLabel *Character;
 		QMovie *ChtrPix;
-		QMediaPlayer *BGM;
-		QMediaPlaylist *BGMList;
 		hp_bar *HpBar;
 
 		//Record

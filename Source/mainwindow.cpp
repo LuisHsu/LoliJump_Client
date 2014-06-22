@@ -8,14 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
 	//Allocate object
 	ui->setupUi(this);
 	HpBar=new hp_bar(ui->HPLabel_Red,MAXHP);
-	QString path=QApplication::applicationDirPath();
-	BGM=new QMediaPlayer(this);
-	BGMList=new QMediaPlaylist(this);
-	BGMList->addMedia(QUrl::fromLocalFile(path+"/BGM.mp3"));
-	BGMList->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
-	BGM->setPlaylist(BGMList);
-	BGM->setVolume(50);
-	game=new Game(this,HpBar,QApplication::applicationDirPath(),BGM);
+
+	game=new Game(this,HpBar,QApplication::applicationDirPath());
 
 
 	//Connect

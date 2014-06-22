@@ -34,7 +34,7 @@ class Game : public QObject
 {
 		Q_OBJECT
 	public:
-		explicit Game(QWidget *parent, hp_bar *Bar, QString pat, QMediaPlayer *bgm);
+		explicit Game(QWidget *parent, hp_bar *Bar, QString pat);
 		~Game();
 		Character *Lolita;
 		void Paint(QPainter &p);
@@ -66,6 +66,7 @@ class Game : public QObject
 		hp_bar *bar;
 		QString path;
 		QMediaPlayer *BGM;
+		QMediaPlaylist *BGMList;
 
 		Leaderboard *Leader_window;
 

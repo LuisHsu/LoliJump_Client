@@ -1,6 +1,7 @@
 #include "game.h"
 
-Game::Game(QWidget *parent, hp_bar *Bar, QString pat ,QMediaPlayer *bgm){
+Game::Game(QWidget *parent, hp_bar *Bar, QString pat ){
+
 
 	qsrand(QDateTime::currentMSecsSinceEpoch());
 	Parent=parent;
@@ -14,7 +15,12 @@ Game::Game(QWidget *parent, hp_bar *Bar, QString pat ,QMediaPlayer *bgm){
 	PaintTimer->start(1);
 
 	bar=Bar;
-	BGM=bgm;
+	BGM=new QMediaPlayer(this);
+	BGMList=new QMediaPlaylist(this);
+	BGMList->addMedia(QUrl::fromLocalFile(path+"/BGM.mp3"));
+	BGMList->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
+	BGM->setPlaylist(BGMList);
+	BGM->setVolume(50);
 
 	Started=false;
 
